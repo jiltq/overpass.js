@@ -1,5 +1,5 @@
 const nodefetch = require('node-fetch');
-const mainURL = 'http://overpass-api.de/api/interpreter?data=[out:json];';
+const mainURL = 'http://overpass-api.de/api/interpreter?data=';
 
 /**
  * The main hub for making queries with the overpass API
@@ -7,25 +7,27 @@ const mainURL = 'http://overpass-api.de/api/interpreter?data=[out:json];';
 class OverpassQuery {
 	constructor() {
 		this.elements = [];
-        this.format = 
+		this.format = 'json';
+		this.timeout = 180;
 	}
-	/**
-     * Adds an element to the query
-     */
 	addElement({ type, tags, bbox }) {
 		const elementString = `${type}${tags.map(tag => `[${Object.keys(tag)}=${Object.values(tag)}](${bbox.join(',')})`)}`;
 		this.elements.push(elementString);
 		return this;
 	}
-    setFormat(format) {
-
-    }
-	/**
-     * Returns the Overpass API response for the query
-     */
+	setFormat(format) {
+		this.format = format;
+		return this;
+	}
+	setTimeout(timeout) {
+		this.timeout = timeout;
+		return this;
+	}
+	get query() {
+		return `${mainURL}[out:${this.format}][timeout:${this.timeout}];(${this.elements.join(';')};);out body;>;out skel qt;`;
+	}
 	async fetch() {
-		const queryURL = `(${mainURL}${this.elements.join(';')};);out body;>;out skel qt;`;
-		const response = await nodefetch(queryURL);
+		const response = await nodefetch(this.query);
 		return JSON.parse(JSON.stringify(await (response).json()));
 	}
 }
