@@ -19,6 +19,8 @@ out skel qt;
 ..can be expressed like:
 
 ```js
+const { OverpassQuery } = require('overpass.js');
+
 const query = new OverpassQuery()
     .setFormat('json')
     .setTimeout(30)
