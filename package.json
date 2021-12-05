@@ -1,5 +1,5 @@
 {
-  "name": "overpass-thing",
+  "name": "overpass.js",
   "version": "1.0.0",
   "description": "",
   "main": "./src/index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jiltq/overpass-thing.git"
+    "url": "git+https://github.com/jiltq/overpass.js.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jiltq/overpass-thing/issues"
+    "url": "https://github.com/jiltq/overpass.js/issues"
   },
-  "homepage": "https://github.com/jiltq/overpass-thing#readme",
+  "homepage": "https://github.com/jiltq/overpass.js#readme",
   "dependencies": {
     "eslint": "^8.4.0",
     "node-fetch": "^2.6.6"
