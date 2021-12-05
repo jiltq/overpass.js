@@ -2,7 +2,7 @@
   "name": "overpass-thing",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/jiltq/overpass-thing/issues"
   },
-  "homepage": "https://github.com/jiltq/overpass-thing#readme"
+  "homepage": "https://github.com/jiltq/overpass-thing#readme",
+  "dependencies": {
+    "eslint": "^8.4.0",
+    "node-fetch": "^2.6.6"
+  }
 }
