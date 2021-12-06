@@ -23,8 +23,8 @@ class OverpassQuery {
 	 * @param {ElementOptions} options Options for the element
 	 * @returns {OverpassQuery}
 	 */
-	addElement({ type, tags, bbox }) {
-		const elementString = `${type}${tags.map(tag => `[${Object.keys(tag)}=${Object.values(tag)}](${bbox.join(',')})`)}`;
+	addElement({ type, tags = [], bbox }) {
+		const elementString = `${type}${tags.map(tag => `[${Object.keys(tag)}=${Object.values(tag)}]`)}(${bbox.join(',')})`;
 		this.elements.push(elementString);
 		return this;
 	}
@@ -59,6 +59,7 @@ class OverpassQuery {
 	 * @returns {any}
 	 */
 	async fetch() {
+		if (this.elements.length == 0) throw new Error('No elements specified!');
 		const response = await nodefetch(this.query);
 		return JSON.parse(JSON.stringify(await (response).json()));
 	}
