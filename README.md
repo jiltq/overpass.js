@@ -2,18 +2,7 @@
 
 overpass.js is a [Node.js](https://nodejs.org) module that allows you to easily interact with the [Overpass API](https://wiki.openstreetmap.org/wiki/Overpass_API).
 
-- object-oriented
-- performant
-
-## installation
-
-```sh-session
-npm install overpass.js
-yarn add overpass.js
-pnpm add overpass.js
-```
-
-## example usage
+## example code
 
 an overpass query like this:
 
