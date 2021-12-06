@@ -1,16 +1,19 @@
-<div align="center">
-  <br />
-  <p>
-    <a href="http://www.overpass-api.de"><img src="https://cdn.discordapp.com/attachments/816126601184018472/917209539231748146/overpasslogo.png" width="500" alt="overpass api" /></a>
-  </p>
-  <br />
-</div>
-
 # overpass.js
 
 overpass.js is a [Node.js](https://nodejs.org) module that allows you to easily interact with the [Overpass API](https://wiki.openstreetmap.org/wiki/Overpass_API).
 
-## example code
+- object-oriented
+- performant
+
+## installation
+
+```sh-session
+npm install overpass.js
+yarn add overpass.js
+pnpm add overpass.js
+```
+
+## example usage
 
 an overpass query like this:
 
