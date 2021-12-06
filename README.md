@@ -1,7 +1,7 @@
 <div align="center">
   <br />
   <p>
-    <a href="http://www.overpass-api.de"><img src="http://www.overpass-api.de/logo.png" width="546" alt="overpass api" /></a>
+    <a href="http://www.overpass-api.de"><img src="http://www.overpass-api.de/logo.png" width="500" alt="overpass api" /></a>
   </p>
   <br />
 </div>
