@@ -21,14 +21,18 @@ out skel qt;
 ```js
 const { OverpassQuery } = require('overpass.js');
 
-const query = new OverpassQuery()
-    .setFormat('json')
-    .setTimeout(30)
-    .addElement({
-        type: 'node',
-        tags: [{ amenity: 'parking' }],
-        bbox: [47.48047027491862, 19.039797484874725, 47.51331674014172, 19.07404761761427]
-    });
+const query = new overpass.OverpassQuery()
+		.setFormat('json')
+		.setTimeout(30)
+		.addElement({
+			type: 'node',
+			tags: [{
+				key: 'amenity',
+				value: 'parking',
+				not: false,
+			}],
+			bbox: [47.48047027491862, 19.039797484874725, 47.51331674014172, 19.07404761761427],
+		});
 
 ```
 
@@ -59,3 +63,7 @@ const response = await query.fetch();
   ]
 }
 ```
+
+## language support
+* settings
+    * e
