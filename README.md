@@ -54,7 +54,7 @@ const response = await query.fetch();
       id: 260305115,
       lat: 47.4987947,
       lon: 19.053641,
-      tags: [Object]
+      tags: tags: { amenity: 'parking', parking: 'underground' }
     }
   ]
 }
