@@ -63,7 +63,3 @@ const response = await query.fetch();
   ]
 }
 ```
-
-## language support
-* settings
-    * e
