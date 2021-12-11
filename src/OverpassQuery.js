@@ -8,7 +8,7 @@ class OverpassQuery {
 		this.timeout = 180;
 	}
 	addElement({ type, tags = [], bbox }) {
-		const elementString = `${type}${tags.map(tag => `[${Object.keys(tag)}=${Object.values(tag)}]`)}(${bbox.join(',')})`;
+		const elementString = `${type}${tags.map(tag => `[${tag.key}${tag.not ? '!=' : '='}${tag.value}]`)}(${bbox.join(',')})`;
 		this.elements.push(elementString);
 		return this;
 	}
