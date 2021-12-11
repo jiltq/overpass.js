@@ -21,13 +21,49 @@ out skel qt;
 ```js
 const { OverpassQuery } = require('overpass.js');
 
-const query = new OverpassQuery()
-    .setFormat('json')
-    .setTimeout(30)
-    .addElement({
-        type: 'node',
-        tags: [{ amenity: 'parking' }],
-        bbox: [47.48047027491862, 19.039797484874725, 47.51331674014172, 19.07404761761427]
-    });
+const query = new overpass.OverpassQuery()
+		.setFormat('json')
+		.setTimeout(30)
+		.addElement({
+			type: 'node',
+			tags: [{
+				key: 'amenity',
+				value: 'parking',
+				not: false,
+			}],
+			bbox: [47.48047027491862, 19.039797484874725, 47.51331674014172, 19.07404761761427],
+		});
 
 ```
+
+and to fetch the query:
+
+```js
+const response = await query.fetch();
+```
+
+## example response
+
+```js
+{
+  version: 0.6,
+  generator: 'Overpass API 0.7.57 93a4d346',
+  osm3s: {
+    timestamp_osm_base: '2021-12-11T17:50:30Z',
+    copyright: 'The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.'
+  },
+  elements: [
+    {
+      type: 'node',
+      id: 260305115,
+      lat: 47.4987947,
+      lon: 19.053641,
+      tags: tags: { amenity: 'parking', parking: 'underground' }
+    }
+  ]
+}
+```
+
+## language support
+* settings
+    * e
